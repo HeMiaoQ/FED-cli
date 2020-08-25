@@ -1,0 +1,27 @@
+{
+  "name": "fed-cli",
+  "version": "1.0.0",
+  "description": "前端脚手架",
+  "bin": {
+    "fed": "bin/fed.js"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeMiaoQ/FED-cli.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "HeMiaoqing",
+  "bugs": {
+    "url": "https://github.com/HeMiaoQ/FED-cli/issues"
+  },
+  "homepage": "https://github.com/HeMiaoQ/FED-cli#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.0.0",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3"
+  }
+}
