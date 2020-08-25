@@ -1,5 +1,5 @@
 {
-  "name": "fed-cli",
+  "name": "@hemiao7/fed-cli",
   "version": "1.0.0",
   "description": "前端脚手架",
   "bin": {
