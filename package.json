@@ -1,6 +1,6 @@
 {
   "name": "@hemiao7/fed-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "前端脚手架",
   "bin": {
     "fed": "bin/fed.js"
@@ -14,6 +14,7 @@
     "cli"
   ],
   "author": "HeMiaoqing",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/HeMiaoQ/FED-cli/issues"
   },

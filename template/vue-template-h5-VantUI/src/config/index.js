@@ -30,6 +30,8 @@ export const API_DEFAULT_CONFIG = {
   headers: {
     'Content-Type': 'application/json;charset=UTF-8'
   },
+  loadingIntercept: true,
+  loadingDelayTime: 500,
   isOpenErrorIntercept: true, // 是否开启 axios 错误拦截
   isNotAllowMultipleRequest: true, // 是否禁止同类型请求并发
   multipleRequestGapTime: 5000 // 禁止同类型请求并发功能启用时，判定为同类型请求的间隔时间
