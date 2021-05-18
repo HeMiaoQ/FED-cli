@@ -34,7 +34,8 @@ export const API_DEFAULT_CONFIG = {
   loadingDelayTime: 500,
   isOpenErrorIntercept: true, // 是否开启 axios 错误拦截
   isNotAllowMultipleRequest: true, // 是否禁止同类型请求并发
-  multipleRequestGapTime: 5000 // 禁止同类型请求并发功能启用时，判定为同类型请求的间隔时间
+  multipleRequestGapTime: -1, // 禁止同类型请求并发功能启用时，判定为同类型请求的间隔时间(毫秒)。-1为不限制，直到上一相同请求结束为止
+  removeRequestDelayTime: 1000 // 从请求池中移除对应请求的延迟时间
 }
 
 // 全局注入设置

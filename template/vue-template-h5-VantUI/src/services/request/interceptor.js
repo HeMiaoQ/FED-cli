@@ -50,9 +50,9 @@ function __responseSuccessHandler (res) {
 
 function __responseFailHandler (res) {
   const { config, message } = res
-  const { isOpenErrorIntercept } = config.options
+  const { timeout, options: { isOpenErrorIntercept } } = config
   if (!isOpenErrorIntercept) return
-  if (message === 'timeout of 60000ms exceeded' || message === 'Network Error') {
+  if (message === `timeout of ${timeout}ms exceeded` || message === 'Network Error') {
     networkErrorHandler()
   } else {
     SHOW_TOAST(message)

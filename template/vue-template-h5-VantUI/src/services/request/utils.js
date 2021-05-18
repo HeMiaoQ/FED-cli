@@ -5,7 +5,14 @@ export function requestQueuePush (requestItem) {
 }
 
 export function requestQueueSplice (requestItem) {
-  requestQueue.splice(requestQueue.findIndex(item => item.url === requestItem.url), 1)
+  const { removeRequestDelayTime } = requestItem.options
+  if (removeRequestDelayTime) {
+    setTimeout((data) => {
+      requestQueue.splice(requestQueue.findIndex(item => item.url === data.url), 1)
+    }, removeRequestDelayTime, requestItem)
+  } else {
+    requestQueue.splice(requestQueue.findIndex(item => item.url === requestItem.url), 1)
+  }
 }
 
 export function getRequestParamsKey (item) {
@@ -23,13 +30,13 @@ export function checkAllowMultipleRequest (requestItem) {
 
   requestItem.__requestStartTime__ = new Date()
 
-  if (multipleRequestGapTime === undefined) {
+  if (multipleRequestGapTime === undefined || multipleRequestGapTime === -1) {
     if (sameRequestItemList.length) {
       return false
     }
   } else {
     const lastSameRequestItem = sameRequestItemList.slice(-1)[0]
-    if (lastSameRequestItem && lastSameRequestItem.__requestStartTime__ - requestItem.__requestStartTime__ < multipleRequestGapTime) {
+    if (lastSameRequestItem && requestItem.__requestStartTime__ - lastSameRequestItem.__requestStartTime__ < multipleRequestGapTime) {
       return false
     }
   }

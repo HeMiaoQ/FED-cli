@@ -6,7 +6,7 @@ export default async function request (item, params, options) {
 
   if (!await requestStart(requestItem)) {
     // eslint-disable-next-line
-    return Promise.reject('abort by start')
+    return Promise.reject(`abort by start ${requestItem.url}`)
   }
 
   // eslint-disable-next-line

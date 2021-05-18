@@ -17,17 +17,18 @@ export function requestStart (requestItem) {
     return false
   }
 
-  requestQueuePush(requestItem)
+  isNotAllowMultipleRequest && requestQueuePush(requestItem)
   return true
 }
 
 export async function requestReturn (requestItem) {
+  const { isNotAllowMultipleRequest } = requestItem.options
   try {
-    const res = await axios(requestItem)
-    requestQueueSplice(requestItem)
+    const res = await axiosInstance(requestItem)
+    isNotAllowMultipleRequest && requestQueueSplice(requestItem)
     return res
   } catch (err) {
-    requestQueueSplice(requestItem)
+    isNotAllowMultipleRequest && requestQueueSplice(requestItem)
     throw err
   }
 }
