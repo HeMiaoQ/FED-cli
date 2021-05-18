@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { CALC_REM } from '@/services/utils'
+import { CALC_REM } from '@/utils'
 
 export default {
   props: {

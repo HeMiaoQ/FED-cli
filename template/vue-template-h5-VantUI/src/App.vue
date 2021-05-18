@@ -20,9 +20,9 @@
 import { mapState, mapActions } from 'vuex'
 import request from '@/services/request'
 import api from '@/services/api'
-import axios from '@/services/axios'
-import { REGEXP_PHONE } from '@/services/constants'
-import { CALC_REM } from '@/services/utils'
+import { axiosInstance } from '@/services/request/lifeCycle'
+import { REGEXP_PHONE } from '@/constants'
+import { CALC_REM } from '@/utils'
 import { Loading } from 'vant'
 
 export default {

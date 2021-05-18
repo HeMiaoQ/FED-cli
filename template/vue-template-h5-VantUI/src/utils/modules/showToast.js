@@ -1,6 +1,4 @@
 import { Notify } from 'vant'
-import { ENV_HANDLER } from '@/services/utils'
-import VM from '@/main'
 
 const SUCCESS = 'success'
 const FAILURE = 'failure'

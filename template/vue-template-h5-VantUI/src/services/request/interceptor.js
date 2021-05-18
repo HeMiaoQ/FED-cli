@@ -1,6 +1,6 @@
-import { CONSOLE_REQUEST_ENABLE, CONSOLE_RESPONSE_ENABLE } from '../index'
+import { CONSOLE_REQUEST_ENABLE, CONSOLE_RESPONSE_ENABLE } from '@/config'
 import store from '@/store'
-import { SHOW_TOAST } from '@/services/utils'
+import { SHOW_TOAST } from '@/utils'
 
 export function requestSuccessFunc (req) {
   // eslint-disable-next-line
