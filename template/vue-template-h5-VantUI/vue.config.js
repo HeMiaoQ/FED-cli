@@ -1,7 +1,8 @@
-const isDev = process.env.NODE_ENV === 'development'
+const { API } = require('./PROXY_API')
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  publicPath: isDev ? '/' : '././',
+  publicPath: isProd ? '././' : '/',
   outputDir: 'dist',
   assetsDir: 'static',
   css: {
@@ -14,7 +15,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://xxxx',
+        target: API[process.env.NODE_ENV],
         pathRewrite: { '^/api': '' },
         changeOrigin: true
       }
