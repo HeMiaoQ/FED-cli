@@ -26,7 +26,6 @@ module.exports = {
     deletePreloadPrefetch(config)
     copyStaticToDist(config)
     setMetaVersion(config)
-    addVConsole(config)
     addHtmlVersionCheck(config)
   }
 }
@@ -58,10 +57,6 @@ function setMetaVersion (config) {
   })
 }
 
-function addVConsole (config) {
-  config.plugin('vConsole').use(require('vconsole-webpack-plugin'), [{ enable: isDev }])
-}
-
 function addHtmlVersionCheck (config) {
-  config.plugin('HtmlVersionCheck').use(require('html-version-check-webpack-plugin'), [{ enable: !isDev }])
+  config.plugin('HtmlVersionCheck').use(require('html-version-check-webpack-plugin'), [{ enable: isProd }])
 }

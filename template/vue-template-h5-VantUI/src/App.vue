@@ -37,6 +37,7 @@ export default {
   },
   async created () {
     this.updateLoadingStatus()
+    this.initVConsole()
 
     /* eslint-disable */
     console.info(
@@ -49,7 +50,7 @@ export default {
     console.info(
       request, '\n',
       api, '\n',
-      axios, '\n',
+      axiosInstance, '\n',
       REGEXP_PHONE, '\n',
       CALC_REM, '\n',
     )
@@ -68,6 +69,14 @@ export default {
     updateLoadingStatus () {
       this.UPDATE_LOADING_STATUS(true)
       setTimeout(() => this.UPDATE_LOADING_STATUS(false), 3000)
+    },
+    initVConsole () {
+      const isShowVConsole = this.$utils.GET_VCONSOLE() === '1'
+      if (isShowVConsole) {
+        // eslint-disable-next-line
+        const vConsole = new VConsole()
+        console.log('hello world!')
+      }
     }
   }
 }
